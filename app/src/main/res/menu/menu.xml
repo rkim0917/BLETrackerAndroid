@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/listAll"
+        android:title="List All"
+        android:icon="@drawable/ic_listall"/>
+
+    <item
+        android:id="@+id/listNearby"
+        android:title="List Nearby"
+        android:icon="@drawable/ic_listnearby"/>
+
+    <item
+        android:id="@+id/mapNearby"
+        android:title="Map Nearby"
+        android:icon="@drawable/ic_mapnearby"/>
+
+</menu>

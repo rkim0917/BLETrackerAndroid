@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +29,11 @@ import java.util.Collection;
 
 public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 
+    private static final int REQUEST_ENABLE_BT = 1234;
     private BottomNavigationView bottomNavigationView;
+    private MyBluetoothService myBluetoothService;
+
+    private BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
     private static final String TAG = "MainActivity";
 
@@ -54,7 +60,10 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
 
+        //Ask user for location permissions
         requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION}, 1234);
+        //Ask user for bluetooth permissions
+        requestPermissions(new String[] {Manifest.permission.BLUETOOTH_ADMIN}, 5678);
 
         beaconManager = BeaconManager.getInstanceForApplication(this);
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout(ALTBEACON_LAYOUT));
@@ -62,6 +71,12 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 
         //Home Page ListAll
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new ListAllFragment()).commit();
+
+        if (!bluetoothAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+        }
+
 
     }
 

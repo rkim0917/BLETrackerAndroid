@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         //Ask user for location permissions
         requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION}, 1234);
         //Ask user for bluetooth permissions
-        requestPermissions(new String[] {Manifest.permission.BLUETOOTH_ADMIN}, 5678);
+        requestPermissions(new String[] {Manifest.permission.BLUETOOTH}, 5678);
+        requestPermissions(new String[] {Manifest.permission.BLUETOOTH_ADMIN}, 9101);
 
         beaconManager = BeaconManager.getInstanceForApplication(this);
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout(ALTBEACON_LAYOUT));

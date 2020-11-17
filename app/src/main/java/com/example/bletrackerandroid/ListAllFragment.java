@@ -63,6 +63,7 @@ public class ListAllFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_list_all, container, false);
 
+        //String[] items = {};
         String[] items = {  "ID#1   Crane#2",
                             "ID#2   Bulldozer#3",
                             "ID#3   LargeWrench#5",

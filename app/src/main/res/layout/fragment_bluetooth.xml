@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListAllFragment"
+    tools:context=".BluetoothFragment"
     android:background="@color/white">
 
-
-    <ListView
-        android:id="@+id/listAll"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@+id/bluetooth" />
 
 </RelativeLayout>

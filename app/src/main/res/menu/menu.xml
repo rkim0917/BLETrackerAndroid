@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/bluetooth"
+        android:title="Bluetooth"
+        android:icon="@drawable/ic_bluetooth"/>
+
+    <item
         android:id="@+id/listAll"
         android:title="List All"
         android:icon="@drawable/ic_listall"/>

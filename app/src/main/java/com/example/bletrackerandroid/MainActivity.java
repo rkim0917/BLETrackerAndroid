@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Button btnSend;
 
     EditText etSend;
-    //a
 
     private static final UUID MY_UUID_INSECURE =
             UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee");
